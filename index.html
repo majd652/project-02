@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="home">
+    <nav class="socail-media">
+       
+        <a class="social" href="cv.html">Mijn cv</a>
+        <a class="social" href="Ambitie.html">Mijn-Ambitie</a>
+        <a class="social" href="interview.html">Interview</a>
+        <a class="social" href="linkedin.com">linkedin</a>
+         <a class="social" href="instagram.com">Instagram</a>
+         <a class="social" href="telegram.com">Telegram</a>
+         <a class="social" href="contact.html">Contact-Formulier</a>
+         
+    </nav>
+    <div id="close" class="close">
+        <button id="close">Close</button>
+    </div>
+    <nav class="close-hamburger-menu" id="close-hamburger-menu"> 
+        <a href="images/Burger-Menu.jpg">Bekijk onze hamburger-menu</a>
+        <a href="#">Service</a>
+        <a href="#">Contact</a>
+    </nav>
+    
+ 
+
+    <div class="greeting" id="greeting"></div>
+    <img class="home-pic" src="images/image_123650291 (1).JPG" alt="personal-pic">
+
+<div class="about-me">
+    <h1 class="highlight">About me</h1>
+    <p class="about-me-text">Ik ben Majd ZeinAldin, 21 jaar oud en hoog
+        gemotiveerd om succes te bereiken,
+        gepassioneerd over ICT. Ik ben zowel zelfstandig
+      als een teamspeler en ben vastbesloten om
+      succes te behalen in deze sector."
+      Daarnaast ben ik een persoon met waarden en
+      normen en vind het zeer belangrijk om respect
+      te hebben en te geven.</p>
+    </div>
+    <div>
+<h2 class="highlight">
+    My project's
+</h2>
+</div>
+<div class="img-container">
+    <img src="images/Screenshot 2024-11-08 005952.png" alt="project-pictuur">
+    <a class="show-button" href="index.html">show</a>
+</div>
+<div id="cookie-banner" class="cookie-banner">
+    <p>We use cookies to improve your experience. By using our site, you agree to our <a href="#">privacy policy</a>.</p>
+    <button id="accept-cookies">Accept</button>
+  </div>
+  <script>
+  //cookies//
+const cookieBanner = document.getElementById('cookie-banner');
+const acceptButton = document.getElementById('accept-cookies');
+
+
+if (!localStorage.getItem('cookiesAccepted')) {
+  cookieBanner.classList.remove('hidden');
+}
+
+
+acceptButton.addEventListener('click', () => {
+  localStorage.setItem('cookiesAccepted', 'true');
+  cookieBanner.classList.add('hidden');
+});
+//greeting//
+function showGreeting() {
+    const greetingElement = document.getElementById("greeting");
+    const now = new Date();
+    const hour = now.getHours();
+
+    let greeting = "";
+
+    if (hour >= 6 && hour < 12) {
+        greeting = "Goedemorgen!";
+    } else if (hour >= 12 && hour < 18) {
+        greeting = "Goedemiddag!";
+    } else if (hour >= 18 && hour < 24) {
+        greeting = "Goedenavond!";
+    } else {
+        greeting = "Goedenacht!";
+    }
+
+    greetingElement.textContent = greeting;
+}
+
+showGreeting();
+//HAMBURGER MENU
+
+
+const closeButton = document.getElementById('close');
+const burgerMenu = document.getElementById('close-hamburger-menu');
+
+
+closeButton.addEventListener('click', () => {
+  
+    burgerMenu.classList.add('hidden');
+    closeButton.classList.add('hidden')
+});
+
+
+
+</script>
+</body>
+</html>
